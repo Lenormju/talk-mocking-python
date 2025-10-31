@@ -6,3 +6,7 @@
 /.venv/
 
 /public/
+
+.env.local
+
+**/__pycache__/
