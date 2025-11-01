@@ -1,14 +1,28 @@
-<!-- .slide: data-background-image="./sgalagaev--5iSCtrJX5o-unsplash.jpg" -->
+<style>
+.reveal section[data-background-image] h1:not(:empty) {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 40px;
+  border-radius: 10px;
+  display: inline-block;
+  color: AliceBlue;
+}
+</style>
+
+<!-- .slide: data-background-image="./Lion_tamer_(LOC_pga.03749).jpg" -->
 
 # Dompter les mocks !
 
 <!--
 TODO:
-* trouver une image de couverture
-* style CSS pour que les titres ressortent sur les images
 -->
 
 ---
+
+# Introduction
+
+TODO: image
+
+-v-
 
 ## Merci aux sponsors
 
@@ -22,12 +36,6 @@ Julien Lenormand
 
 Notes:
 - qui je suis : Pythonista, Craft, Test
-
----
-
-# Introduction
-
-TODO: image
 
 Notes:
 * objectif 5-6 minutes max, pour laisser du temps pour la démo, et pour la conclusion
@@ -65,9 +73,9 @@ Notes:
 
 ---
 
-# Un petit peu de théorie
+<!-- .slide: data-background-image="./vitaly-gariev-Z0s6MM2YD8g-unsplash.jpg" -->
 
-TODO: image
+# Un petit peu de théorie
 
 -v-
 
@@ -141,10 +149,9 @@ Notes:
 2. rendre pilotable certaines parties du code  <!-- .element: class="fragment" -->
 * isoler des dépendances que je ne contrôle pas  <!-- .element: class="fragment" -->
 
---> rendre testable du code qui ne l'est pas tellement / pas du tout  <!-- .element: class="fragment" -->
+➡️ rendre testable du code qui ne l'est pas tellement / pas du tout  <!-- .element: class="fragment" -->
 
 Notes:
-* TODO emoji "flèche vers la droite"
 * besoin de "tricher" un peu
 * pied de biche versus scalpel chirurgical
 
@@ -163,7 +170,7 @@ Quelques exemples de ce qui rend difficile de tester :
 * ou écrit son résultat sur stdout  <!-- .element: class="fragment" -->
 * ...  <!-- .element: class="fragment" -->
 
-Solution : tricher, modifier le programme
+Solution : tricher, modifier le programme  <!-- .element: class="fragment" -->
 
 -v-
 
@@ -172,7 +179,7 @@ Solution : tricher, modifier le programme
 ![](./acteurs-et-doublures-11.png)  <!-- .element: class="fragment" -->
 
 * dummy ou stub ou spy ou fake ou mock ?  <!-- .element: class="fragment" -->
-* en Python, on ne fait que des `Mock` !  <!-- .element: class="fragment" -->
+* en Python, on ne fait que des Mock !  <!-- .element: class="fragment" -->
 
 Notes:
 * "point vocabulaire" sur les différentes formes de doublures
@@ -184,11 +191,15 @@ Notes:
   * fake : alternative implementation
   * mock : spy with pre-programmed expectations
 
+-v-
+
+![](./Crash-test-with-airbag-and-safty-belt.jpg)
+
 ---
 
-# Mise en pratique !
+<!-- .slide: data-background-image="./godfrey-nyangechi-YzKdrThXLIk-unsplash.jpg" -->
 
-TODO: image
+# Mise en pratique !
 
 Notes:
 * IDE, thème clair
@@ -237,24 +248,25 @@ Notes:
 
 ---
 
-# Conclusion
+<!-- .slide: data-background-image="./trainer-puts-his-head-lions-600w-2397220271.png" -->
 
-TODO: image
+# Conclusion
 
 -v-
 
 ## Conclusion
 
-* les mocks c'est bien : isolation, perf, économies, ...
-* les mocks c'est mal : isolation, fragilité, complexité, ...
-* repenser l'architecture et la stratégie de test :
-  * adapter pattern (narrow width)
-  * inversion de dépendance (SOLID)
-  * architecture héxagonale etc...
-  * fakes --> simulateurs
-  * TestContainers
-  * contract testing
-  * mock en dernier recours
+* les mocks c'est bien : isolation, perf, économies, ...  <!-- .element: class="fragment" -->
+* les mocks c'est mal : isolation, fragilité, complexité, ...  <!-- .element: class="fragment" -->
+* repenser l'architecture et la stratégie de test :  <!-- .element: class="fragment" -->
+  * adapter pattern (narrow width)  <!-- .element: class="fragment" -->
+  * inversion de dépendance (SOLID)  <!-- .element: class="fragment" -->
+  * architecture héxagonale etc...  <!-- .element: class="fragment" -->
+  * fakes --> simulateurs  <!-- .element: class="fragment" -->
+  * TestContainers  <!-- .element: class="fragment" -->
+  * contract testing  <!-- .element: class="fragment" -->
+  * ...  <!-- .element: class="fragment" -->
+  * mock en dernier recours  <!-- .element: class="fragment" -->
 
 Notes:
 * too much mocking, "mocking hell", complexité, test de mock, "quand on a un marteau ..."
@@ -265,28 +277,36 @@ Notes:
 
 # Pour aller + loin
 
-* Doc de Python :
+* concernant les mocks :
   * [`unittest.mock` — mock object library](https://docs.python.org/3/library/unittest.mock.html)
   * [`unittest.mock` — getting started](https://docs.python.org/3/library/unittest.mock-examples.html)
-* [Julien Lenormand - Tout comprendre des mocks Python](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/tout-comprendre-des-mocks-python/)
-* Julien Lenormand et Jonathan Gaffiot - L'enfer des tests autos, bientôt en replay
-* TODO mon article archi héxa + replay youtube
-* [Martin Fowler - Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html)
-* [Hynek Schlawack - “Don’t Mock What You Don’t Own” in 5 Minutes](https://hynek.me/articles/what-to-mock-in-5-mins/)
-* [Brett Schuchert et Tim Ottinger - tests "FIRST"](https://agileinaflash.blogspot.com/2009/02/first.html)
-* TODO design pattern guru : adapter
-* [`mock_open`](TODO), [`fakefs`](TODO), fakes locaux pour les services Cloud, [`responses`](TODO) pour `requests`, [VCR](TODO), [`act`](TODO) pour les GitHub Actions, [`TODO.StringIO`](TODO) au lieu d'un `fd`, ...
+  * [Julien Lenormand - Tout comprendre des mocks Python](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/tout-comprendre-des-mocks-python/)
+  * [Martin Fowler - Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html)
+  * [Hynek Schlawack - “Don’t Mock What You Don’t Own” in 5 Minutes](https://hynek.me/articles/what-to-mock-in-5-mins/)
+  * [Philippe Bourgau - Careless Mocking Considered Harmful](https://philippe.bourgau.net/careless-mocking-considered-harmful/)
+  * [`unittest.mock.mock_open`](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.mock_open), [`fakefs`](https://pypi.org/project/pyfakefs/), fakes locaux pour les services Cloud (S3, SQS, ...), [`responses`](https://pypi.org/project/responses/) pour `requests`, [VCR.py](https://pypi.org/project/vcrpy/), [`io.StringIO`](https://docs.python.org/3/library/io.html#io.StringIO) au lieu d'un `fd`, ...
+* sur les tests auto :
+  * Julien Lenormand et Jonathan Gaffiot - L'enfer des tests autos, bientôt en replay
+  * [Brett Schuchert et Tim Ottinger - tests "FIRST"](https://agileinaflash.blogspot.com/2009/02/first.html)
+* sur l'architecture :
+  * [Julien Lenormand - Une approche différente de l'architecture hexagonale](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/une-approche-differente-de-l-architecture-hexagonale/) et [replay vidéo](https://www.youtube.com/watch?v=GLAK047VNYk)
+  * [adapter](https://refactoring.guru/design-patterns/adapter) ou [facade](https://refactoring.guru/design-patterns/facade) design patterns
+  * programmation fonctionnelle (fonctions pures)
 * TODO podcasts ?
-* programmation fonctionnelle
 
 ---
 
 # Crédits photos
 
 * TODO
-* Photo of a rabbit by by [Степана](https://unsplash.com/@sgalagaev>Ансплэш) on [Unsplash](https://unsplash.com/photos/brown-rabbit-on-window-during-daytime--5iSCtrJX5o)
+* [Степана on Unsplash - Brown rabbit on window during daytime](https://unsplash.com/photos/brown-rabbit-on-window-during-daytime--5iSCtrJX5o)
+* [Godfrey Nyangechi on Unsplash - Black flat screen computer monitor](https://unsplash.com/photos/brown-rabbit-on-window-during-daytime--5iSCtrJX5o)
+* [Vitaly Gariev on Unsplash - Professor writing complex mathematical equations on a chalkboard](https://unsplash.com/photos/black-flat-screen-computer-monitor-YzKdrThXLIk)
 * [linternaute.com - Les acteurs et leurs doublures](https://www.linternaute.com/lifestyle/loisirs/1174307-les-acteurs-et-leurs-doublures/)
 * [pokepedia.fr - Métamorph](https://www.pokepedia.fr/Fichier:M%C3%A9tamorph-RFVF.png)
+* [wikimedia.org - Lion tamer](https://commons.wikimedia.org/wiki/File:Lion_tamer_(LOC_pga.03749).jpg)
+* [wikimedia.org - Crash test with airbag and safety belts](https://commons.wikimedia.org/wiki/File:Crash-test-with-airbag-and-safty-belt.jpg)
+* [Valerii Mishanov - The trainer puts his head in the lion's mouth](https://www.shutterstock.com/image-vector/trainer-puts-his-head-lions-mouth-2397220271)
 
 ---
 

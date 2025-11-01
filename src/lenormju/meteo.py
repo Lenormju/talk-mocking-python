@@ -12,7 +12,7 @@ def get_current_temperature_at_campus_rene_cassin() -> float:
     units = "metric"  # "standard"/"metric"/"imperial"
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={openweather_api_key}&lang={lang}&units={units}"
     # cf https://openweathermap.org/current
-    response = requests.get(url, timeout=5)
+    response = requests.get(url, timeout=5)  # /!\ only 1000 free API calls per day /!\
     response.raise_for_status()
     # example of "200 OK" response : cf "./example_response.json"
     # may reply differently if we exceed the quota :
