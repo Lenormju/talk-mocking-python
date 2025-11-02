@@ -205,55 +205,44 @@ Notes:
 
 -v-
 
-## Première situation : météo incontrôlable !
+## Météo incontrôlable !
 
 Notes:
-* j'ai du code qui dépend de la météo
-* run les tests
-* run les tests avec couverture
-* problème !
-* schéma excalidraw
-* mock la fonction : monkeypatching avec mock, puis sans mock
-* mock l'exception : side_effect
-* problème : test le if, et pas le get_weather
-* mock le requests.get
-* couverture !
-* interface : tradeoff, status_code
-* mocker proprement : patch
-* configurer
-
--v-
-
-## Seconde situation : TODO
-
-Notes:
-* système d'import et modèle objet
-* tout est objet !
-* memory_graph
-* "where to patch" : where defined versus where used
-* Zen of Python : "Namespaces are one honking great idea -- let's do more of those!"
-
--v-
-
-## Troisième situation : pytest
-
-TODO
-
-Notes:
-* fixtures
-* monkeypatch
-* plugins :
-  * pytest-freezer
-  * pytest-mock
-  * pytest-azure
-  * pytest-bigquery-mock
-  * pytest-boto-mock
-  * pytest-http-mocker
-  * pytest-minio-mock
-  * pytest-mock-api
-  * pytest-mockredis
-  * pytest-mocktcp
-  * ...
+* découverte :
+  * j'ai du code qui dépend de la météo
+  * run les tests
+  * run les tests avec couverture
+  * problème !
+  * schéma excalidraw
+  * mock la fonction : monkeypatching avec mock, puis sans mock
+  * mock l'exception : side_effect
+  * problème : test le if, et pas le get_weather
+  * mock le requests.get
+  * couverture !
+  * interface : tradeoff, status_code
+  * mocker proprement : patch
+  * configurer, spec
+* pytest :
+  * fixtures
+  * monkeypatch
+  * plugins :
+    * pytest-freezer
+    * pytest-mock
+    * pytest-azure
+    * pytest-bigquery-mock
+    * pytest-boto-mock
+    * pytest-http-mocker
+    * pytest-minio-mock
+    * pytest-mock-api
+    * pytest-mockredis
+    * pytest-mocktcp
+    * ...
+* big picture
+  * système d'import et modèle objet
+  * tout est objet !
+  * memory_graph
+  * "where to patch" : where defined versus where used
+  * Zen of Python : "Namespaces are one honking great idea -- let's do more of those!"
 
 ---
 
