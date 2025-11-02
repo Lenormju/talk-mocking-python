@@ -111,7 +111,6 @@ len(MagicMock())  # 0
 Mock()[0]  # TypeError: 'Mock' object is not subscriptable
 MagicMock()[0]  # <MagicMock name='mock.__getitem__()' id='127122939480112'>
 ```
-<!-- .element: class="fragment" -->
 
 ```python
 from unittest.mock import NonCallableMock
@@ -142,9 +141,11 @@ Notes:
 * "améliorer" des tests  <!-- .element: class="fragment" -->
   * FIRST : Fast, Independant, Repeatable, Self-sufficient, Timely  <!-- .element: class="fragment" -->
 
+.
+
 1. vérifier ou bloquer des interactions à l'intérieur du code  <!-- .element: class="fragment" -->
 2. rendre pilotable certaines parties du code  <!-- .element: class="fragment" -->
-* isoler des dépendances que je ne contrôle pas  <!-- .element: class="fragment" -->
+3. isoler des dépendances que je ne contrôle pas  <!-- .element: class="fragment" -->
 
 ➡️ rendre testable du code qui ne l'est pas tellement / pas du tout  <!-- .element: class="fragment" -->
 
@@ -254,14 +255,6 @@ Notes:
   * pytest-mocktcp
   * ...
 
--v-
-
-## Le recap !
-
-* c'est quoi un mock
-* à quoi ça sert
-* comment on l'applique : patch, patch.object
-
 ---
 
 <!-- .slide: data-background-image="./trainer-puts-his-head-lions-600w-2397220271.png" -->
@@ -348,6 +341,8 @@ Notes:
 ---
 
 # Questions
+
+LinkedIn : Julien Lenormand
 
 Slides : [https://github.com/Lenormju/talk-mocking-python/](https://github.com/Lenormju/talk-mocking-python/)
 
