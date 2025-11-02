@@ -257,7 +257,8 @@ Notes:
 * les mocks c'est bien : isolation, perf, économies, ...  <!-- .element: class="fragment" -->
 * les mocks c'est mal : isolation, fragilité, complexité, ...  <!-- .element: class="fragment" -->
 * repenser l'architecture et la stratégie de test :  <!-- .element: class="fragment" -->
-  * adapter pattern (narrow width)  <!-- .element: class="fragment" -->
+  * design feedback  <!-- .element: class="fragment" -->
+  * adapter et facade patterns (narrow width)  <!-- .element: class="fragment" -->
   * inversion de dépendance (SOLID)  <!-- .element: class="fragment" -->
   * architecture héxagonale etc...  <!-- .element: class="fragment" -->
   * fakes --> simulateurs  <!-- .element: class="fragment" -->
@@ -347,7 +348,7 @@ Slides : [https://github.com/Lenormju/talk-mocking-python/](https://github.com/L
 4. Dependency Inversion != Dependency Injection
 5. Pytest = `assert` efficace, pas besoin de `class`, des fixtures, des plugins
 6. Comment mesurer la fiabilité des tests ? Et leur maintenabilité ?
-7. Définition de "test unitaire" ?
+7. Définition de "test unitaire" ? Structurel, technique, fonctionnel ?
 8. Définition de "legacy" ?
 9. Quel intérêt au "collaboration testing" (tester le "how") ?
 

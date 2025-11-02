@@ -9,6 +9,7 @@ dependencies = [
     "memory-graph>=0.3.61",
     "mkslides>=1.0.10",
     "pytest>=8.4.2",
+    "pytest-mock>=3.15.1",
     "requests>=2.32.5",
 ]
 
