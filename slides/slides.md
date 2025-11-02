@@ -18,28 +18,25 @@ TODO:
 
 ---
 
+<!-- .slide: data-background-image="./sebastian-coman-photography-ZGgIYaL9lYk-unsplash.jpg" -->
+
 # Introduction
-
-TODO: image
-
--v-
-
-## Merci aux sponsors
-
-- TODO sponsors PyCon Fr 2025
-
--v-
-
-## Présentation
-
-Julien Lenormand
-
-Notes:
-- qui je suis : Pythonista, Craft, Test
 
 Notes:
 * objectif 5-6 minutes max, pour laisser du temps pour la démo, et pour la conclusion
+
+-v-
+
+## Julien Lenormand
+
+Slides : [https://github.com/Lenormju/talk-mocking-python/](https://github.com/Lenormju/talk-mocking-python/)
+
+<img src="./qr-code-slides.png" width="600">
+
+Notes:
+* qui je suis : Pythonista, Craft, Test
 * n'hésitez pas à poser vos questions tout du long, je verrai si j'ai le temps ou pas
+* les slides sont disponibles en ligne, je remets le QR code à la fin
 
 -v-
 
@@ -210,14 +207,19 @@ Notes:
 ## Première situation : météo incontrôlable !
 
 Notes:
-* le problème : je veux tester ma fonction météo, le test avec couverture montre qu'il y a des trous, que faire ?
-  * schéma excalidraw
-  * mock la fonction
-  * mock la request
-  * fake server
-* mocker sans mock : le monkeypatching
-* mocker avec mock : utiliser un Mock
+* j'ai du code qui dépend de la météo
+* run les tests
+* run les tests avec couverture
+* problème !
+* schéma excalidraw
+* mock la fonction : monkeypatching avec mock, puis sans mock
+* mock l'exception : side_effect
+* problème : test le if, et pas le get_weather
+* mock le requests.get
+* couverture !
+* interface : tradeoff, status_code
 * mocker proprement : patch
+* configurer
 
 -v-
 
@@ -227,6 +229,8 @@ Notes:
 * système d'import et modèle objet
 * tout est objet !
 * memory_graph
+* "where to patch" : where defined versus where used
+* Zen of Python : "Namespaces are one honking great idea -- let's do more of those!"
 
 -v-
 
@@ -237,6 +241,18 @@ TODO
 Notes:
 * fixtures
 * monkeypatch
+* plugins :
+  * pytest-freezer
+  * pytest-mock
+  * pytest-azure
+  * pytest-bigquery-mock
+  * pytest-boto-mock
+  * pytest-http-mocker
+  * pytest-minio-mock
+  * pytest-mock-api
+  * pytest-mockredis
+  * pytest-mocktcp
+  * ...
 
 -v-
 
@@ -284,24 +300,25 @@ Notes:
   * [Martin Fowler - Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html)
   * [Hynek Schlawack - “Don’t Mock What You Don’t Own” in 5 Minutes](https://hynek.me/articles/what-to-mock-in-5-mins/)
   * [Philippe Bourgau - Careless Mocking Considered Harmful](https://philippe.bourgau.net/careless-mocking-considered-harmful/)
-  * [`unittest.mock.mock_open`](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.mock_open), [`fakefs`](https://pypi.org/project/pyfakefs/), fakes locaux pour les services Cloud (S3, SQS, ...), [`responses`](https://pypi.org/project/responses/) pour `requests`, [VCR.py](https://pypi.org/project/vcrpy/), [`io.StringIO`](https://docs.python.org/3/library/io.html#io.StringIO) au lieu d'un `fd`, ...
+  * [Ned Batchelder - Why your mock doesn’t work](https://nedbatchelder.com/blog/201908/why_your_mock_doesnt_work.html)
+  * [`mock_open`](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.mock_open), [`fakefs`](https://pypi.org/project/pyfakefs/), fakes locaux Cloud, [`responses`](https://pypi.org/project/responses/), [VCR.py](https://pypi.org/project/vcrpy/), [`io.StringIO`](https://docs.python.org/3/library/io.html#io.StringIO), ...
 * sur les tests auto :
   * Julien Lenormand et Jonathan Gaffiot - L'enfer des tests autos, bientôt en replay
   * [Brett Schuchert et Tim Ottinger - tests "FIRST"](https://agileinaflash.blogspot.com/2009/02/first.html)
+  * [Robert C. Martin (Uncle Bob) - Test Contra-variance](https://blog.cleancoder.com/uncle-bob/2017/10/03/TestContravariance.html)
 * sur l'architecture :
   * [Julien Lenormand - Une approche différente de l'architecture hexagonale](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/une-approche-differente-de-l-architecture-hexagonale/) et [replay vidéo](https://www.youtube.com/watch?v=GLAK047VNYk)
   * [adapter](https://refactoring.guru/design-patterns/adapter) ou [facade](https://refactoring.guru/design-patterns/facade) design patterns
   * programmation fonctionnelle (fonctions pures)
-* TODO podcasts ?
 
 ---
 
 # Crédits photos
 
-* TODO
 * [Степана on Unsplash - Brown rabbit on window during daytime](https://unsplash.com/photos/brown-rabbit-on-window-during-daytime--5iSCtrJX5o)
 * [Godfrey Nyangechi on Unsplash - Black flat screen computer monitor](https://unsplash.com/photos/brown-rabbit-on-window-during-daytime--5iSCtrJX5o)
 * [Vitaly Gariev on Unsplash - Professor writing complex mathematical equations on a chalkboard](https://unsplash.com/photos/black-flat-screen-computer-monitor-YzKdrThXLIk)
+* [Sebastian Coman Photography on Unsplash - Small appetizers arranged on a silver plate](https://unsplash.com/photos/small-appetizers-are-arranged-on-a-silver-plate-ZGgIYaL9lYk)
 * [linternaute.com - Les acteurs et leurs doublures](https://www.linternaute.com/lifestyle/loisirs/1174307-les-acteurs-et-leurs-doublures/)
 * [pokepedia.fr - Métamorph](https://www.pokepedia.fr/Fichier:M%C3%A9tamorph-RFVF.png)
 * [wikimedia.org - Lion tamer](https://commons.wikimedia.org/wiki/File:Lion_tamer_(LOC_pga.03749).jpg)
@@ -312,6 +329,7 @@ Notes:
 
 # Remerciements
 
+* les sponsors, qui ont rendu cet évènement possible et accessible
 * Lucie Anglade pour la proposition inespérée !
   * (et la personne qui s'est décommandée)
 * Bas Terwijn pour la lib [`memory_graph`](https://memory-graph.com/)
@@ -333,14 +351,13 @@ Notes:
 
 Slides : [https://github.com/Lenormju/talk-mocking-python/](https://github.com/Lenormju/talk-mocking-python/)
 
-Notes:
-* TODO QRcode vers les slides : https://github.com/Lenormju/talk-mocking-python/
+<img src="./qr-code-slides.png" width="600">
 
 ---
 
 # Extra (en vrac)
 
-1. lib `mock` est pour Python < 3.3 (2012, ajout à la stdlib)
+1. lib `mock` est pour Python < 3.3 (2012, ajout à la stdlib), ✝️ Michael Foord
 2. donner un `name` aux mocks, pour faciliter le debug
 3. école *mockist* de London versus école *classicist* de Detroit
 4. Dependency Inversion != Dependency Injection
@@ -354,12 +371,12 @@ Notes:
 
 # Abstract
 
-Si vous avez déjà essayé de mocker, vous avez sûrement eu du mal à bien les appliquer.
-Si vous en avez plein vos tests, vous avez surement remarqué qu'ils sont faillibles et fragiles.
-Mais ils peuvent aussi être très puissants, ce qui les rend très utiles pour le test.
-
-Afin de les utiliser efficacement, il faut d'abord **comprendre vraiment** comment ils fonctionnent, leur interaction avec le système d'import, le modèle objet de Python, et l'architecture des programmes.
-En particulier, il faudra apprendre à discerner les "références" que Python utilise partout (des sortes de "pointeurs"), et les concepts d'immutabilité et de passage-par-copie/référence.
-Avec tous ces savoirs, vous pourrez prédire le comportement des mocks, et réussir à les utiliser sereinement.
-Vous confronterez alors cette compréhension à des exercices concrets de comment appliquer des mocks.
-Enfin, vous aurez des conseils d'outils à utiliser pour tirer un maximum de vos mocks, mais surtout de quand ne pas les utiliser.
+> Si vous avez déjà essayé de mocker, vous avez sûrement eu du mal à bien les appliquer.
+> Si vous en avez plein vos tests, vous avez surement remarqué qu'ils sont faillibles et fragiles.
+> Mais ils peuvent aussi être très puissants, ce qui les rend très utiles pour le test.
+> 
+> Afin de les utiliser efficacement, il faut d'abord **comprendre vraiment** comment ils fonctionnent, leur interaction avec le système d'import, le modèle objet de Python, et l'architecture des programmes.
+> En particulier, il faudra apprendre à discerner les "références" que Python utilise partout (des sortes de "pointeurs"), et les concepts d'immutabilité et de passage-par-copie/référence.
+> Avec tous ces savoirs, vous pourrez prédire le comportement des mocks, et réussir à les utiliser sereinement.
+> Vous confronterez alors cette compréhension à des exercices concrets de comment appliquer des mocks.
+> Enfin, vous aurez des conseils d'outils à utiliser pour tirer un maximum de vos mocks, mais surtout de quand ne pas les utiliser.

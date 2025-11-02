@@ -26,15 +26,11 @@ def get_current_temperature_at_campus_rene_cassin() -> float:
 
 def should_i_bring_a_jacket() -> str:
     temperature = get_current_temperature_at_campus_rene_cassin()
-    if temperature < 15:
+    if temperature < 15.0:
         return "Definitely!"
-    elif temperature < 22:
+    elif temperature < 22.0:
         return "Probably"
-    elif temperature < 25:
+    elif temperature < 25.0:
         return "Just in case ?"
     else:
         return "No need"
-
-
-if __name__ == '__main__':
-    print(should_i_bring_a_jacket())
