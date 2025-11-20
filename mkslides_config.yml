@@ -9,3 +9,4 @@ revealjs:  # https://revealjs.com/config/
   mouseWheel: true
   slideNumber: c/t
   transition: slide
+  pdfSeparateFragments: false
